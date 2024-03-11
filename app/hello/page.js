@@ -8,7 +8,7 @@ export default function Page() {
   function MyButton() {
     return (
       <button>
-        I'm a button
+        Button
       </button>
     )
   }
