@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Page() {
   const [count, setCount] = useState(0);
-  const [guessString, setGuessString] = useState('No guess');
+  const [guessString, setGuessString] = useState("No guess");
   const [wordBuild, setWordBuild] = useState("______");
   const [message, setMessage] = useState("");
 
@@ -32,7 +32,7 @@ export default function Page() {
     
     const formJson = Object.fromEntries(formData.entries());
     if (count < 6) {
-      if (guessString == 'No guess') {
+      if (guessString == "No guess") {
         setGuessString(formJson.myGuess.toUpperCase());
       } else {
         if (!guessString.includes(formJson.myGuess.toUpperCase())) {
