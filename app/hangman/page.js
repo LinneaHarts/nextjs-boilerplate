@@ -28,7 +28,7 @@ export default function Page() {
     // Read the form data
     const form = e.target;
     const formData = new FormData(form);
-    
+    e.target.reset();
     
     const formJson = Object.fromEntries(formData.entries());
     if (count < 6) {
@@ -53,11 +53,11 @@ export default function Page() {
           setCount(count + 1);
         }
       }
-      console.log(word, wordBuild);
       
     } else {
       setMessage("You Die")
     }
+
   }
 
 
@@ -74,7 +74,7 @@ export default function Page() {
           <HangedFigure count={count} />
         </pre>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="myGuess" maxLength="1" />
+          <input id="guessInput" type="text" name="myGuess" maxLength="1"/>
           <button>Guess</button>
         </form>
         <h1 className="red">{message}</h1>
